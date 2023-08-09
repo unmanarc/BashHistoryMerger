@@ -11,17 +11,20 @@ You can build the project using CMake as follows:
 ```
 mkdir build
 cd build
-cmake ..
+cmake .. -DCMAKE_BUILD_TYPE=MinSizeRel
 make
 make install
 ```
 
 You can also install the RPM package if available for your distribution.
 
-## Usage
+## Usage Example
 
 ```
-BashHistoryMerger file1 file2 filen...
+BashHistoryMerger ~/.bash_history ~/old_bash_hist ~/old_bash_hist2 others... > ~/.bash_history.new
+cat ~/.bash_history > ~/.bash_history.old
+cat ~/.bash_history.new > ~/.bash_history
+rm -f ~/.bash_history.new # and optionally ~/.bash_history.old ~/old_bash_hist ~/old_bash_hist2 others
 ```
 
 ## License
